@@ -21,33 +21,23 @@ def bar_plot(bar_plot_data: dict, xlabel: str, ylabel: str, title: str):
 def bar_group_plot(bar_group_data: list, xlabel: str, ylabel: str, title: str):
     '''Pass dict variable'''
     # initialisation
-    y1 = bar_group_data["Cambodia"].values()
-    y2 = bar_group_data["Indonesia"].values()
-    y3 = bar_group_data["Malaysia"].values()
-    y4 = bar_group_data["Myanmar"].values()
-    y5 = bar_group_data["Philippines"].values()
-    y6 = bar_group_data["Singapore"].values()
-    y7 = bar_group_data["Thailand"].values()
+    y_values = []
+    for idx, country in enumerate(["Cambodia","Indonesia","Malaysia","Myanmar",
+                    "Philippines","Singapore","Thailand"]):
+        y_values.append([])
+        for year in range(2004, 2015, 1):
+            y_values[idx].append(bar_group_data[country][year])
 
-    x = list(range(11))
-    x_3 = [i - 0.3 for i in x]
-    x_2 = [i - 0.2 for i in x]
-    x_1 = [i - 0.1 for i in x]
-    x_plus_3 = [i + 0.3 for i in x]
-    x_plus_2 = [i + 0.2 for i in x]
-    x_plus_1 = [i + 0.1 for i in x]
+    x_values = []
+    for i in [-0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3]:
+        x_values.append([j + i for j in range(11)])
 
     fig = plt.figure()
     width = 0.1
-    plt.bar(x_3, y3, width)
-    plt.bar(x_2, y2, width)
-    plt.bar(x_1, y1, width)
-    plt.bar(x, y4, width)
-    plt.bar(x_plus_1, y5, width)
-    plt.bar(x_plus_2, y6, width)
-    plt.bar(x_plus_3, y7, width)
 
     # creating the bar plot
+    for i in range(len(bar_group_data)):
+        plt.bar(x_values[i], y_values[i], width)
 
     fig.autofmt_xdate()  # gives rotation to the x axis titles
     plt.xlabel(xlabel)
@@ -55,4 +45,4 @@ def bar_group_plot(bar_group_data: list, xlabel: str, ylabel: str, title: str):
     plt.title(title)
     plt.legend(bar_group_data.keys())
     plt.tight_layout()
-    plt.xticks(x, list(bar_group_data["Cambodia"].keys()))
+    plt.xticks(x_values[3], list(bar_group_data["Cambodia"].keys()))
