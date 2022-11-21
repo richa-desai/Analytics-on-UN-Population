@@ -1,4 +1,4 @@
-# State of company registration in Maharashtra
+# Analytics on UN Population
 
 ## To run this project-
 * Create a virtual environment with the command: virtualenv new-env-name
