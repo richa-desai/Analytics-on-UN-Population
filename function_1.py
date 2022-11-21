@@ -1,8 +1,5 @@
 ''' This file has all the functions '''
-import array as arr
-import csv
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def bar_plot(bar_plot_data: dict, xlabel: str, ylabel: str, title: str):
@@ -32,7 +29,7 @@ def bar_group_plot(bar_group_data: list, xlabel: str, ylabel: str, title: str):
     y6 = bar_group_data["Singapore"].values()
     y7 = bar_group_data["Thailand"].values()
 
-    x = list(range(7))
+    x = list(range(11))
     x_3 = [i - 0.3 for i in x]
     x_2 = [i - 0.2 for i in x]
     x_1 = [i - 0.1 for i in x]
@@ -49,8 +46,6 @@ def bar_group_plot(bar_group_data: list, xlabel: str, ylabel: str, title: str):
     plt.bar(x_plus_1, y5, width)
     plt.bar(x_plus_2, y6, width)
     plt.bar(x_plus_3, y7, width)
-
-
 
     # creating the bar plot
 
