@@ -15,8 +15,9 @@ def calculate():
             population_count = population['Population']
             year = int(population['Year'])
             if year == 2014:
-                if country in ["Cambodia","Brunei","Indonesia","Laos",
-                               "Malaysia","Myanmar","Philippines","Singapore","Thailand","Vietnam"]:
+                if country in ["Cambodia", "Brunei", "Indonesia", "Laos",
+                               "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand",
+                               "Vietnam"]:
                     asean_population[country] = (
                         asean_population.get(country, 0)
                         + (float(population_count) * 1000)
@@ -32,8 +33,8 @@ def execute():
     asean_population = calculate()
 
     bar_plot(asean_population, "Country",
-                "Population", "Population of ASEAN countries for the year 2014"
-                )
+             "Population", "Population of ASEAN countries for the year 2014"
+             )
     # show plot
     plt.show()
 

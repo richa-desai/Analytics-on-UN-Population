@@ -22,8 +22,8 @@ def calculate():
             population_count = population['Population']
             year = int(population['Year'])
             if 2004 <= year <= 2014:
-                if country in ["Cambodia","Brunei","Indonesia","Laos",
-                            "Malaysia","Myanmar","Philippines","Singapore","Thailand","Vietnam"]:
+                if country in ["Cambodia", "Brunei", "Indonesia", "Laos",
+                               "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam"]:
                     match country:
                         case "Cambodia":
                             cambodia_population[year] = (
@@ -71,6 +71,7 @@ def calculate():
             "Philippines": philippines_population, "Singapore": singapore_population,
             "Thailand": thailand_population}
 
+
 def execute():
     ''' driver function'''
     # get required data from csv in dict and then call plot function
@@ -78,8 +79,8 @@ def execute():
     asean_population = calculate()
 
     bar_group_plot(asean_population, "Year",
-                "Population", "Population of ASEAN countries as groups over the years 2004 - 2014"
-                )
+                   "Population", "Population of ASEAN countries as groups over the years 2004-2014"
+                   )
     # show plot
     plt.show()
 

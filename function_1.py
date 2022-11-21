@@ -18,12 +18,13 @@ def bar_plot(bar_plot_data: dict, xlabel: str, ylabel: str, title: str):
     plt.tight_layout()
     plt.xticks(x_axis_keys)
 
+
 def bar_group_plot(bar_group_data: list, xlabel: str, ylabel: str, title: str):
     '''Pass dict variable'''
     # initialisation
     y_values = []
-    for idx, country in enumerate(["Cambodia","Indonesia","Malaysia","Myanmar",
-                    "Philippines","Singapore","Thailand"]):
+    for idx, country in enumerate(["Cambodia", "Indonesia", "Malaysia", "Myanmar",
+                                   "Philippines", "Singapore", "Thailand"]):
         y_values.append([])
         for year in range(2004, 2015, 1):
             y_values[idx].append(bar_group_data[country][year])

@@ -22,6 +22,7 @@ def calculate():
 
     return india_population
 
+
 def execute():
     ''' driver function'''
     # get required data from csv in dict and then call plot function
@@ -29,8 +30,8 @@ def execute():
     india_population = calculate()
 
     bar_plot(india_population, "Year",
-                "Population", "Population of India over years"
-                )
+             "Population", "Population of India over years"
+             )
     # show plot
     plt.show()
 

@@ -14,8 +14,8 @@ def calculate():
             country = population['Region']
             population_count = population['Population']
             year = int(population['Year'])
-            if country in ["Afghanistan","Bangladesh","Bhutan","India",
-                            "Maldives","Nepal","Pakistan","Sri Lanka"]:
+            if country in ["Afghanistan", "Bangladesh", "Bhutan", "India",
+                           "Maldives", "Nepal", "Pakistan", "Sri Lanka"]:
                 saarc_population[year] = (
                     saarc_population.get(year, 0)
                     + (float(population_count) * 1000)
@@ -31,8 +31,8 @@ def execute():
     saarc_population = calculate()
 
     bar_plot(saarc_population, "Year",
-                "Population", "Population of SAARC countries"
-                )
+             "Population", "Population of SAARC countries"
+             )
     # show plot
     plt.show()
 
