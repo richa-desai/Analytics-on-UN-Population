@@ -23,7 +23,8 @@ def calculate():
             year = int(population['Year'])
             if 2004 <= year <= 2014:
                 if country in ["Cambodia", "Brunei", "Indonesia", "Laos",
-                               "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand", "Vietnam"]:
+                               "Malaysia", "Myanmar", "Philippines", "Singapore", "Thailand",
+                               "Vietnam"]:
                     match country:
                         case "Cambodia":
                             cambodia_population[year] = (
